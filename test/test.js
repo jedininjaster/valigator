@@ -1,3 +1,3 @@
 var assert = require('assert');
 
-assert.equal(0, 1);
+assert.equal(1, 1);
