@@ -1,11 +1,11 @@
-[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coveralls Status][coveralls-image]][coveralls-url] [![Downloads][downloads-image]][npm-url]
+<!-- [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coveralls Status][coveralls-image]][coveralls-url] [![Downloads][downloads-image]][npm-url] -->
 
 valigator
 =========
 
 simple validation framework
 
-
+<!-- 
 [downloads-image]: http://img.shields.io/npm/dm/validator.svg
 
 [npm-url]: https://npmjs.org/package/validator
@@ -26,3 +26,4 @@ simple validation framework
 [caja]: https://code.google.com/p/google-caja/source/browse/trunk/src/com/google/caja/plugin/html-sanitizer.js
 [entities]: https://github.com/fb55/node-entities
 [node-ent]: https://github.com/substack/node-ent
+ -->
