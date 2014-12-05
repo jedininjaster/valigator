@@ -1,0 +1,22 @@
+{
+  "name": "valigator",
+  "version": "0.0.0",
+  "description": "a simple javascript validation framework",
+  "main": "valigator.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "test/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jedininjaster/valigator.git"
+  },
+  "author": "jedininjaster",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jedininjaster/valigator/issues"
+  },
+  "homepage": "https://github.com/jedininjaster/valigator"
+}
