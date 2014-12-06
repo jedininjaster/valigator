@@ -1,6 +1,6 @@
 <!-- [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coveralls Status][coveralls-image]][coveralls-url] [![Downloads][downloads-image]][npm-url] -->
 
-[ ![Codeship Status for jedininjaster/api.liist.it](https://codeship.com/projects/368f60f0-5f8c-0132-c1c3-3643fcd47fc7/status)](https://codeship.com/projects/51538)
+[ ![Codeship Status for jedininjaster/valigator](https://codeship.com/projects/9b010b90-5f92-0132-fefc-7eb424531d0a/status)](https://codeship.com/projects/51539)
 
 valigator
 =========
