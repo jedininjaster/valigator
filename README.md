@@ -1,6 +1,6 @@
 <!-- [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coveralls Status][coveralls-image]][coveralls-url] [![Downloads][downloads-image]][npm-url] -->
 
-![travis-build-status]
+<!-- ![travis-build-status] -->
 
 [![Build Status](https://travis-ci.org/jedininjaster/valigator.svg?branch=master)](https://travis-ci.org/jedininjaster/valigator)
 
