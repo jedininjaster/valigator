@@ -1,14 +1,18 @@
 <!-- [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coveralls Status][coveralls-image]][coveralls-url] [![Downloads][downloads-image]][npm-url] -->
 
+[travis-build-status]
+
 [![Build Status](https://travis-ci.org/jedininjaster/valigator.svg?branch=master)](https://travis-ci.org/jedininjaster/valigator)
 
-[ ![Codeship Status for jedininjaster/valigator](https://codeship.com/projects/9b010b90-5f92-0132-fefc-7eb424531d0a/status)](https://codeship.com/projects/51539)
+<!-- [ ![Codeship Status for jedininjaster/valigator](https://codeship.com/projects/9b010b90-5f92-0132-fefc-7eb424531d0a/status)](https://codeship.com/projects/51539) -->
 
 valigator
 =========
 
 simple validation framework
 
+
+[travis-build-status]: https://travis-ci.org/jedininjaster/valigator.svg?branch=master)](https://travis-ci.org/jedininjaster/valigator
 
 <!-- 
 [downloads-image]: http://img.shields.io/npm/dm/validator.svg

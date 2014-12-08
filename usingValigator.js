@@ -2,47 +2,81 @@
 
 
 //integrator creates custom validation functions, or uses a prebuilt one
-var phoneRegexValidatorFunc = function(val) {
+var phoneRegexValidatorFunc = function (val) {
     phoneRegex = ''; //insert phone regex or import it;
     if (val.match(phoneRegex)) return true
-}
+};
 //and adds them
 valigator.addValidateFunction('phoneRegexValidatorFunc', phoneValidatorFunc);
 
 
 //below this line is form specific
 
-var getPhoneNumber = function() {
-	return $('#phone-number').val();
+var getPhoneNumber = function () {
+    return $('#phone-number').val();
 };
 
-var phoneNumberRegexIsInvalidFunc = function() {
+var phoneNumberRegexIsInvalidFunc = function () {
     //show regex specific error error
 };
 
-var phoneNumberRegexIsValidFunc = function() {
+var phoneNumberRegexIsValidFunc = function () {
     //remove regex specific error
 };
 
-var phoneNumberRequiredIsInvalidFunc = function(){
-	//add required specific error
+var phoneNumberRequiredIsInvalidFunc = function () {
+    //add required specific error
 };
 
-var formIsInvalidFunc = function(){
-	//disable submit button
+var formIsInvalidFunc = function () {
+    //disable submit button
 };
 
-var formIsValidFunc = function(){
-	//enable submit button
+var formIsValidFunc = function () {
+    //enable submit button
 };
 
-var setupFormValidator = function() {
+var masterForm;
+
+var scaffoldForm = function () {
+
+    var v = valigator;
+
+    var $firstName = $('.firstname');
+    var firstNameGetter = function(){
+        return $firstName.val();
+    };
+
+    masterForm = new valigator.Form()
+        .attachField('firstName', new v.Field(firstNameGetter)
+            .attachValidator('required', new v.validators.required()
+                .onInvalid(function(){
+                    $('.firstName-required-validation-msg').text('this is required');
+                })
+                .onValid(function(){
+                    $('.firstName-required-validation-msg').text('');
+                }))
+            .attachValidator('regex', new v.validators.isValidFirstNameRegex()
+                .onInvalid(function () {
+
+                })))
+        .attachFieldList('phone', new v.Field()
+            .attach('regex', v.validators.isValidPhoneRegex))
+        .attach('lastName', new v.Field())
+        .attach('password', new v.Form())
+        .attach('addresses', new v.FormList());
+
+    masterForm.fields.firstName.isValid();
+    masterForm.isValid();
+};
+
+var setupFormValidator = function () {
     var masterForm = new Valigator.Form();
     var addressForm = new Valigator.Form();
     form.addField('phoneNumber', getPhoneNumber);
 
     // note: order matters if throw one error per field only
-    
+
     //phone - required
     form.fields.phoneNumber.addValidator('required', valigator.validationFuncs.required);
     form.fields.phoneNumber.validators.regex.onInvalid(phoneNumberRequiredIsInvalidFunc);
