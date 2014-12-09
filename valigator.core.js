@@ -97,7 +97,7 @@ Form.prototype.attachField = function(name, field){
         //error
         console.log(name + ' already exists');
     } else {
-        //todo: this is where you left off
+        this.fields[name] = field;
     }
 };
 
@@ -107,7 +107,12 @@ Form.prototype.attachField = function(name, field){
  * @param {Valigator.FieldList} fieldList
  */
 Form.prototype.attachFieldList = function(name, fieldList){
-
+    if(this.fields.name){
+        //error
+        console.log(name + ' already exists');
+    } else {
+        this.fields[name] = field;
+    }
 };
 
 /**
@@ -116,7 +121,12 @@ Form.prototype.attachFieldList = function(name, fieldList){
  * @param {Valigator.Form} form
  */
 Form.prototype.attachForm = function(name, form){
-
+    if(this.forms.name){
+        //error
+        console.log(name + ' already exists');
+    } else {
+        this.forms[name] = form;
+    }
 };
 
 /**
@@ -125,5 +135,10 @@ Form.prototype.attachForm = function(name, form){
  * @param {Valigator.FormList} formList
  */
 Form.prototype.attachFormList = function(name, formList){
-
+    if(this.formLists.name){
+        //error
+        console.log(name + ' already exists');
+    } else {
+        this.formLists[name] = formList;
+    }
 };
