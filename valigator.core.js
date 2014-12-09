@@ -93,6 +93,9 @@ Form.prototype.attach = function(name, validatable) {
  * @param {Valigator.Field} field
  */
 Form.prototype.attachField = function(name, field){
+
+    //todo: add type checks in here
+
     if(this.fields.name){
         //error
         console.log(name + ' already exists');
@@ -107,11 +110,14 @@ Form.prototype.attachField = function(name, field){
  * @param {Valigator.FieldList} fieldList
  */
 Form.prototype.attachFieldList = function(name, fieldList){
+
+    //todo: add type checks in here
+
     if(this.fields.name){
         //error
         console.log(name + ' already exists');
     } else {
-        this.fields[name] = field;
+        this.fields[name] = fieldList;
     }
 };
 
@@ -121,6 +127,9 @@ Form.prototype.attachFieldList = function(name, fieldList){
  * @param {Valigator.Form} form
  */
 Form.prototype.attachForm = function(name, form){
+
+    //todo: add type checks in here
+
     if(this.forms.name){
         //error
         console.log(name + ' already exists');
@@ -135,6 +144,9 @@ Form.prototype.attachForm = function(name, form){
  * @param {Valigator.FormList} formList
  */
 Form.prototype.attachFormList = function(name, formList){
+
+    //todo: add type checks in here
+
     if(this.formLists.name){
         //error
         console.log(name + ' already exists');

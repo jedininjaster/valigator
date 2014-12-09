@@ -50,10 +50,10 @@ var scaffoldForm = function () {
     masterForm = new valigator.Form()
         .attachField('firstName', new v.Field(firstNameGetter)
             .attachValidator('required', new v.validators.required()
-                .onInvalid(function(){
+                .attachOnInvalidFunction(function(){
                     $('.firstName-required-validation-msg').text('this is required');
                 })
-                .onValid(function(){
+                .attachOnValidFunction(function(){
                     $('.firstName-required-validation-msg').text('');
                 }))
             .attachValidator('regex', new v.validators.isValidFirstNameRegex()
@@ -61,7 +61,7 @@ var scaffoldForm = function () {
 
                 })))
         .attachFieldList('phone', new v.Field()
-            .attach('regex', v.validators.isValidPhoneRegex))
+            .attach('regex', new v.Validator()))
         .attach('lastName', new v.Field())
         .attach('password', new v.Form())
         .attach('addresses', new v.FormList());
