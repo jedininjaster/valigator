@@ -1,25 +1,59 @@
 var Validator = Valigator.Validator = function (validationFunction) {
 
-    if(!( typeof validationFunction === 'function')){
-        console.error('you must pass a validator function as an argument');
-        return;
-    }
-
-    if(validationFunction.length !== 1){
-        console.error('validation function must accept a val parameter');
-    }
-
-    //this function must accept
-    this._validationFunction = validationFunction;
+    this._validationFunctions = {};
     this._isValid = false;
     this.onValidFunctions = {};
     this.onInvalidFunctions = {};
+};
+
+Validator.prototype.runValidation = function () {
+    var functionName;
+    var validationFunction;
+    var isValid = true;
+    //for every thing
+    for(functionName in this._validationFunctions){
+        //return if not own property
+        if(!this._validationFunctions.hasOwnProperty(functionName)) return;
+
+        validationFunction = this._validationFunctions[functionName];
+
+        //if it is not valid
+        if(!validationFunction()){
+            //set form to false
+            isValid = false;
+        }
+    }
+    this._isValid = isValid;
+    return this;
 };
 
 Validator.prototype.isValid = function () {
 
 
 
+};
+
+/**
+ *
+ * @param {String} name
+ * @param validationFunction
+ */
+Validator.prototype.attachValidationFunction = function (name, validationFunction) {
+
+    //check
+    if(!( typeof validationFunction === 'function')){
+        console.error('you must pass a validator function as an argument');
+        return;
+    }
+
+    //check
+    if(validationFunction.length !== 1){
+        console.error('validation function must accept a val parameter');
+    }
+
+    //todo: add checks
+
+    this._validationFunctions[name] = validationFunction;
 };
 
 /**
@@ -33,7 +67,6 @@ Validator.prototype.attachOnValidFunction = function (name, onValidFunction) {
 
     this.onValidFunctions[name] = onValidFunction;
 };
-
 
 /**
  *
