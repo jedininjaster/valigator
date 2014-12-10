@@ -48,7 +48,7 @@ Form.prototype._runValidationOn = function(validatables){
     //for every thing
     for(validatableName in validatables){
         //return if not own property
-        if(!validatables.hasOwnProperty(validatableName)) return;
+        if(!validatables.hasOwnProperty(validatableName)) continue;
 
         validatable = validatables[validatableName];
 

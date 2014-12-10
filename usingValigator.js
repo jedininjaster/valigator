@@ -40,27 +40,28 @@ var masterForm;
 
 var scaffoldForm = function () {
 
-    var v = valigator;
+    var v = Valigator;
 
     var $firstName = $('.firstname');
     var firstNameGetter = function(){
         return $firstName.val();
     };
 
-    masterForm = new valigator.Form()
-        .attachField('firstName', new v.Field(firstNameGetter)
+    masterForm = new Valigator.Form()
+        .attachField('firstName', new v.Field()
+            .attachGetter(firstNameGetter)
             .attachValidator('required', new v.validators.required()
-                .attachOnInvalidFunction(function(){
+                .attachOnInvalidFunction('showError', function(){
                     $('.firstName-required-validation-msg').text('this is required');
                 })
-                .attachOnValidFunction(function(){
+                .attachOnValidFunction('hideError', function(){
                     $('.firstName-required-validation-msg').text('');
                 }))
             .attachValidator('regex', new v.validators.isValidFirstNameRegex()
                 .onInvalid(function () {
 
                 })))
-        .attachFieldList('phone', new v.Field()
+        .attachFieldList('phone', new v.FieldList()
             .attach('regex', new v.Validator()))
         .attach('lastName', new v.Field())
         .attach('password', new v.Form())
@@ -70,6 +71,7 @@ var scaffoldForm = function () {
     masterForm.isValid();
 };
 
+//old code
 var setupFormValidator = function () {
     var masterForm = new Valigator.Form();
     var addressForm = new Valigator.Form();
